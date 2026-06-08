@@ -1,0 +1,19 @@
+{
+    "model_name": "cnn_bilstm_word_standard_24052026_03",
+    "model_type": "cnn_bilstm",
+    "norm_type": "standard",
+    "sequence_length": 30,
+    "feature_dim": 225,
+    "num_classes": 20,
+    "use_shoulder_normalize": false,
+    "input_shape": [
+        1,
+        30,
+        225
+    ],
+    "output_shape": [
+        1,
+        20
+    ],
+    "requires_select_tf_ops": true
+}

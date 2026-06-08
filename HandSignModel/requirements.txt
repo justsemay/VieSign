@@ -1,0 +1,12 @@
+# Python 3.10
+
+tensorflow==2.16.1
+keras==3.3.3
+
+numpy==1.26.4
+opencv-python==4.9.0.80
+mediapipe==0.10.14
+
+scikit-learn==1.4.2
+matplotlib==3.8.4
+seaborn==0.13.2

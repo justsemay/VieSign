@@ -1,0 +1,15 @@
+Copy các file sau vào thư mục này:
+
+1. File model .keras
+   Ví dụ: cnn_bilstm_word_standard_24052026_03.keras
+
+2. File norm stats .npz
+   Ví dụ: norm_stats.npz
+   hoặc: cnn_bilstm_word_standard_24052026_03_norm_stats.npz
+
+3. labels.json
+   File này đã tạo sẵn, hãy kiểm tra thứ tự nhãn phải giống ACTIONS khi train.
+
+Quan trọng:
+- Thứ tự labels.json phải trùng 100% với ACTIONS lúc train.
+- Input model phải là: (None, 30, 225).

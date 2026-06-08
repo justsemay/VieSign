@@ -1,0 +1,16 @@
+{
+    "model_name": "cnn_bilstm_word_standard_24052026_02",
+    "accuracy": 0.9872611464968153,
+    "macro_precision": 0.9869578134284017,
+    "macro_recall": 0.9875,
+    "macro_f1": 0.9863774026143981,
+    "weighted_precision": 0.9884457160590543,
+    "weighted_recall": 0.9872611464968153,
+    "weighted_f1": 0.9870270163131263,
+    "top3_accuracy": 0.9968152866242038,
+    "avg_confidence": 0.9581705927848816,
+    "min_confidence": 0.2431003898382187,
+    "max_confidence": 0.9906954765319824,
+    "num_test_samples": 314,
+    "num_wrong": 4
+}

@@ -1,0 +1,53 @@
+Model: cnn_bilstm_word_standard_24052026_02
+======================================================================
+
+Overall Metrics
+======================================================================
+Accuracy           : 0.9873
+Macro Precision    : 0.9870
+Macro Recall       : 0.9875
+Macro F1-score     : 0.9864
+Weighted Precision : 0.9884
+Weighted Recall    : 0.9873
+Weighted F1-score  : 0.9870
+Top-3 Accuracy     : 0.9968
+Avg Confidence     : 0.9582
+Min Confidence     : 0.2431
+Max Confidence     : 0.9907
+
+Classification Report
+======================================================================
+              precision    recall  f1-score   support
+
+    xin_chao       1.00      1.00      1.00        16
+     xin_loi       1.00      1.00      1.00        16
+      cam_on       1.00      1.00      1.00        16
+         toi       0.89      1.00      0.94        16
+         ban       1.00      0.81      0.90        16
+        thay       1.00      1.00      1.00        16
+          co       1.00      1.00      1.00        16
+        muon       1.00      1.00      1.00        16
+         hoc       1.00      1.00      1.00        16
+     giup_do       1.00      1.00      1.00        16
+          an       0.94      1.00      0.97        16
+        uong       1.00      0.94      0.97        16
+   trinh_bay       1.00      1.00      1.00        16
+    lam_viec       1.00      1.00      1.00        16
+         vui       1.00      1.00      1.00        16
+        buon       1.00      1.00      1.00        16
+        khoe       1.00      1.00      1.00        16
+         met       1.00      1.00      1.00        16
+       du_an       1.00      1.00      1.00        16
+        IDLE       0.91      1.00      0.95        10
+
+    accuracy                           0.99       314
+   macro avg       0.99      0.99      0.99       314
+weighted avg       0.99      0.99      0.99       314
+
+
+Wrong Predictions
+======================================================================
+#0013 | True: ban             | Pred: toi             | Conf: 0.9447 | Top3: toi(94.5%), ban(1.7%), muon(0.7%)
+#0066 | True: uong            | Pred: an              | Conf: 0.8550 | Top3: an(85.5%), IDLE(3.5%), uong(2.6%)
+#0173 | True: ban             | Pred: IDLE            | Conf: 0.4324 | Top3: IDLE(43.2%), buon(13.3%), toi(12.8%)
+#0191 | True: ban             | Pred: toi             | Conf: 0.9333 | Top3: toi(93.3%), muon(2.8%), ban(0.8%)

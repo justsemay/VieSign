@@ -1,0 +1,16 @@
+{
+    "model_name": "bilstm_aug_word_standard_26052026_01",
+    "accuracy": 0.9872611464968153,
+    "macro_precision": 0.9863275613275613,
+    "macro_recall": 0.9875,
+    "macro_f1": 0.9863983012559864,
+    "weighted_precision": 0.9878034209244398,
+    "weighted_recall": 0.9872611464968153,
+    "weighted_f1": 0.987048314291815,
+    "top3_accuracy": 0.9968152866242038,
+    "avg_confidence": 0.9554304480552673,
+    "min_confidence": 0.48531368374824524,
+    "max_confidence": 0.981834352016449,
+    "num_test_samples": 314,
+    "num_wrong": 4
+}

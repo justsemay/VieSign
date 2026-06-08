@@ -1,0 +1,59 @@
+Model: lstm_word_shoulder_scale_23052026_01
+======================================================================
+
+Overall Metrics
+======================================================================
+Accuracy           : 0.9638
+Macro Precision    : 0.9655
+Macro Recall       : 0.9643
+Macro F1-score     : 0.9633
+Weighted Precision : 0.9674
+Weighted Recall    : 0.9638
+Weighted F1-score  : 0.9641
+Top-3 Accuracy     : 0.9891
+Avg Confidence     : 0.9447
+Min Confidence     : 0.2830
+Max Confidence     : 0.9948
+
+Classification Report
+======================================================================
+              precision    recall  f1-score   support
+
+    xin_chao       1.00      1.00      1.00        14
+     xin_loi       1.00      1.00      1.00        14
+      cam_on       1.00      1.00      1.00        14
+         toi       0.81      0.93      0.87        14
+         ban       1.00      0.93      0.96        14
+        thay       0.93      1.00      0.97        14
+          co       1.00      1.00      1.00        14
+        muon       0.92      0.86      0.89        14
+         hoc       1.00      1.00      1.00        14
+     giup_do       0.88      1.00      0.93        14
+          an       1.00      0.93      0.96        14
+        uong       1.00      0.93      0.96        14
+   trinh_bay       1.00      1.00      1.00        14
+    lam_viec       1.00      0.86      0.92        14
+         vui       0.93      1.00      0.97        14
+        buon       1.00      0.93      0.96        14
+        khoe       1.00      0.93      0.96        14
+         met       1.00      1.00      1.00        14
+       du_an       1.00      1.00      1.00        14
+        IDLE       0.83      1.00      0.91        10
+
+    accuracy                           0.96       276
+   macro avg       0.97      0.96      0.96       276
+weighted avg       0.97      0.96      0.96       276
+
+
+Wrong Predictions
+======================================================================
+#0005 | True: lam_viec        | Pred: IDLE            | Conf: 0.5747 | Top3: IDLE(57.5%), trinh_bay(15.9%), xin_loi(7.3%)
+#0033 | True: toi             | Pred: IDLE            | Conf: 0.7506 | Top3: IDLE(75.1%), trinh_bay(6.4%), an(4.4%)
+#0090 | True: khoe            | Pred: vui             | Conf: 0.5692 | Top3: vui(56.9%), khoe(19.2%), muon(2.9%)
+#0102 | True: muon            | Pred: toi             | Conf: 0.5372 | Top3: toi(53.7%), muon(22.8%), cam_on(4.6%)
+#0165 | True: buon            | Pred: muon            | Conf: 0.7480 | Top3: muon(74.8%), buon(17.9%), met(2.1%)
+#0169 | True: lam_viec        | Pred: giup_do         | Conf: 0.2971 | Top3: giup_do(29.7%), xin_loi(26.2%), lam_viec(16.0%)
+#0220 | True: muon            | Pred: toi             | Conf: 0.8945 | Top3: toi(89.5%), muon(3.2%), lam_viec(1.1%)
+#0241 | True: an              | Pred: giup_do         | Conf: 0.9719 | Top3: giup_do(97.2%), IDLE(0.4%), trinh_bay(0.4%)
+#0252 | True: ban             | Pred: toi             | Conf: 0.9544 | Top3: toi(95.4%), ban(1.2%), IDLE(0.5%)
+#0256 | True: uong            | Pred: thay            | Conf: 0.5969 | Top3: thay(59.7%), hoc(11.0%), uong(7.9%)

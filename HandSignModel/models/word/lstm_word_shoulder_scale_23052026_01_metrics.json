@@ -1,0 +1,16 @@
+{
+    "model_name": "lstm_word_shoulder_scale_23052026_01",
+    "accuracy": 0.9637681159420289,
+    "macro_precision": 0.9655288461538462,
+    "macro_recall": 0.9642857142857142,
+    "macro_f1": 0.9633453009315078,
+    "weighted_precision": 0.9674447231512447,
+    "weighted_recall": 0.9637681159420289,
+    "weighted_f1": 0.9641315964654293,
+    "top3_accuracy": 0.9891304347826086,
+    "avg_confidence": 0.9446849822998047,
+    "min_confidence": 0.28301894664764404,
+    "max_confidence": 0.9947569370269775,
+    "num_test_samples": 276,
+    "num_wrong": 10
+}

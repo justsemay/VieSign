@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nhận dạng ngôn ngữ ký hiệu tiếng Việt</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <h1>VieSign</h1>
+      <p class="developer-only">Web demo: Camera → MediaPipe → CNN1D + BiLSTM → Kết quả nhận dạng</p>
+      <p class="user-only hidden">Hỗ trợ chuyển ký hiệu tiếng Việt thành văn bản và giọng nói</p>
+    </div>
+
+    <div class="header-actions">
+      <label class="mode-switch" title="Bật để hiển thị thông số kỹ thuật phục vụ bảo vệ đồ án">
+        <span>Người dùng</span>
+        <input id="expertModeToggle" type="checkbox" checked />
+        <span class="slider"></span>
+        <span>Chuyên gia</span>
+      </label>
+      <div class="status-pill developer-only" id="serverStatus">Đang kiểm tra server...</div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card camera-card">
+      <div class="card-title">
+        <h2>Camera</h2>
+        <span id="cameraState">Chưa bật</span>
+      </div>
+
+      <div class="video-wrap">
+        <video id="video" autoplay playsinline muted></video>
+        <canvas id="canvas" class="hidden"></canvas>
+      </div>
+
+      <div id="trackingWarning" class="tracking-warning neutral">
+        Bật camera để hệ thống kiểm tra tư thế và bàn tay.
+      </div>
+
+      <details class="guide-box" open>
+        <summary>Hướng dẫn sử dụng nhanh</summary>
+        <ol>
+          <li>Đặt camera ngang tầm ngực hoặc mặt, giữ khoảng cách vừa đủ để thấy rõ hai tay.</li>
+          <li>Đảm bảo ánh sáng tốt, nền phía sau không quá rối.</li>
+          <li>Đưa tay vào giữa khung hình trước khi thực hiện ký hiệu.</li>
+          <li>Thực hiện ký hiệu chậm, rõ, dứt khoát và chờ hệ thống phát âm kết quả.</li>
+          <li>Nếu AI nhận sai, dùng <strong>Xóa từ cuối</strong>; nếu muốn làm lại, dùng <strong>Xóa toàn bộ</strong>.</li>
+        </ol>
+      </details>
+
+      <div class="control-group camera-controls">
+        <div class="control-label">Điều khiển camera</div>
+        <div class="button-row">
+          <button id="startBtn" class="primary">Bắt đầu</button>
+          <button id="stopBtn" class="secondary">Dừng</button>
+        </div>
+      </div>
+
+      <div class="hint">
+        <strong>Gợi ý demo:</strong> đặt camera ngang tầm ngực, để rõ hai tay, ánh sáng đủ, thực hiện ký hiệu chậm và dứt khoát.
+      </div>
+    </section>
+
+    <section class="card result-card">
+      <div class="card-title">
+        <h2>Kết quả nhận dạng</h2>
+        <span id="signingState">Đang chờ</span>
+      </div>
+
+      <div class="result-main">
+        <div class="label">Ký hiệu hiện tại</div>
+        <div id="currentLabel" class="current-label">---</div>
+      </div>
+
+      <div class="developer-panel developer-only">
+        <div class="meter-row">
+          <div class="meter-info">
+            <span>Confidence</span>
+            <strong id="confidenceText">0%</strong>
+          </div>
+          <div class="meter"><div id="confidenceBar"></div></div>
+        </div>
+
+        <div class="buffer-row">
+          <span>Buffer</span>
+          <strong id="bufferText">0/30</strong>
+        </div>
+
+        <div class="top3">
+          <h3>Top-3 dự đoán</h3>
+          <div id="top3List" class="top3-list"></div>
+        </div>
+      </div>
+
+      <div class="sentence-box">
+        <div class="sentence-header">
+          <div>
+            <div class="label">Câu đã nhận dạng</div>
+            <div id="sentenceText" class="sentence">Chưa có kết quả</div>
+          </div>
+        </div>
+        <div id="sentenceChips" class="sentence-chips"></div>
+      </div>
+
+      <div class="control-group output-controls">
+        <div class="control-label">Điều khiển kết quả</div>
+
+        <label class="auto-speak-toggle" title="Bật để hệ thống tự đọc từ vừa nhận dạng được">
+          <input id="autoSpeakToggle" type="checkbox" checked />
+          <span class="toggle-ui"></span>
+          <span> Tự động phát âm khi nhận dạng được từ mới</span>
+          <strong id="autoSpeakState">Bật</strong>
+        </label>
+
+        <div class="button-row output-button-row">
+          <button id="backspaceBtn" class="secondary">Xóa từ cuối</button>
+          <button id="clearBtn" class="danger-light">Xóa toàn bộ</button>
+          <button id="speakBtn" class="secondary">Phát âm lại</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="card upload-card developer-only">
+    <div class="card-title">
+      <h2>Nhận dạng từ video mẫu</h2>
+      <span>Dự phòng khi webcam lỗi</span>
+    </div>
+    <div class="upload-row">
+      <input id="videoUpload" type="file" accept="video/*" />
+      <button id="uploadBtn" class="secondary">Upload & nhận dạng</button>
+    </div>
+    <pre id="uploadResult">Chưa upload video.</pre>
+  </section>
+
+  <script src="js/api.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/camera.js"></script>
+</body>
+</html>

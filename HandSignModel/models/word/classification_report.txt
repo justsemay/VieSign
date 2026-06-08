@@ -1,0 +1,40 @@
+Classification Report
+=====================
+
+              precision    recall  f1-score   support
+
+    xin_chao       1.00      1.00      1.00        60
+     xin_loi       0.98      1.00      0.99        60
+      cam_on       1.00      1.00      1.00        60
+         toi       1.00      0.98      0.99        60
+         ban       0.98      1.00      0.99        60
+        thay       1.00      1.00      1.00        60
+          co       1.00      1.00      1.00        60
+        muon       1.00      1.00      1.00        60
+         hoc       1.00      1.00      1.00        60
+     giup_do       1.00      0.98      0.99        60
+          an       1.00      1.00      1.00        60
+        uong       1.00      1.00      1.00        60
+   trinh_bay       1.00      1.00      1.00        60
+    lam_viec       1.00      1.00      1.00        60
+         vui       1.00      1.00      1.00        60
+        buon       1.00      1.00      1.00        60
+        khoe       1.00      1.00      1.00        60
+         met       1.00      1.00      1.00        60
+       du_an       1.00      1.00      1.00        60
+        IDLE       1.00      1.00      1.00        60
+
+    accuracy                           1.00      1200
+   macro avg       1.00      1.00      1.00      1200
+weighted avg       1.00      1.00      1.00      1200
+
+
+Overall Metrics
+=====================
+Accuracy           : 0.9983
+Macro Precision    : 0.9984
+Macro Recall       : 0.9983
+Macro F1-score     : 0.9983
+Weighted Precision : 0.9984
+Weighted Recall    : 0.9983
+Weighted F1-score  : 0.9983

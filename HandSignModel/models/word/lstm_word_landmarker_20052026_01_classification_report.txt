@@ -1,0 +1,41 @@
+Model: lstm_word_landmarker_20052026_01
+============================================================
+
+Overall Metrics
+============================================================
+Accuracy           : 0.9832
+Macro Precision    : 0.9852
+Macro Recall       : 0.9825
+Macro F1-score     : 0.9830
+Weighted Precision : 0.9850
+Weighted Recall    : 0.9832
+Weighted F1-score  : 0.9833
+
+Classification Report
+============================================================
+              precision    recall  f1-score   support
+
+    xin_chao       0.92      1.00      0.96        12
+     xin_loi       1.00      0.92      0.96        12
+      cam_on       1.00      1.00      1.00        12
+         toi       1.00      0.92      0.96        12
+         ban       1.00      1.00      1.00        12
+        thay       1.00      1.00      1.00        12
+          co       1.00      1.00      1.00        12
+        muon       1.00      1.00      1.00        12
+         hoc       1.00      1.00      1.00        12
+     giup_do       1.00      1.00      1.00        12
+          an       1.00      1.00      1.00        12
+        uong       1.00      1.00      1.00        12
+   trinh_bay       0.92      1.00      0.96        12
+    lam_viec       1.00      0.92      0.96        12
+         vui       1.00      1.00      1.00        12
+        buon       0.86      1.00      0.92        12
+        khoe       1.00      1.00      1.00        12
+         met       1.00      1.00      1.00        12
+       du_an       1.00      1.00      1.00        12
+        IDLE       1.00      0.90      0.95        10
+
+    accuracy                           0.98       238
+   macro avg       0.99      0.98      0.98       238
+weighted avg       0.99      0.98      0.98       238
