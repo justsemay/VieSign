@@ -1,6 +1,5 @@
-# VieSign - Hệ thống hỗ trợ giao tiếp cho người khiếm thính 🤟
+# VieSign - Hệ thống hỗ trợ giao tiếp cho người khiếm thính
 
-![VieSign Banner](link_ảnh_giao_diện_tổng_quan_của_trò.png)
 
 **VieSign** là ứng dụng Web trí tuệ nhân tạo hỗ trợ nhận dạng ngôn ngữ ký hiệu tiếng Việt (VSL) theo thời gian thực. Dự án được xây dựng nhằm thu hẹp khoảng cách giao tiếp giữa người khiếm thính và cộng đồng thông qua việc chuyển đổi cử chỉ tay thành văn bản và giọng nói.
 
