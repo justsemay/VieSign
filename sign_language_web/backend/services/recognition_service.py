@@ -53,9 +53,6 @@ class RecognitionService:
 
     def remove_last_word(self) -> Dict[str, Any]:
         """Xóa từ cuối cùng trong câu nhận dạng.
-
-        Chỉ xóa dữ liệu đầu ra, không reset toàn bộ camera/model. Sau khi xóa,
-        predictions được clear để model không thêm lại ngay từ vừa xóa do majority vote còn lưu nhãn cũ.
         """
         removed_word = None
         removed_word_display = None

@@ -10,7 +10,7 @@
   <header class="app-header">
     <div>
       <h1>VieSign</h1>
-      <p class="developer-only">Web demo: Camera → MediaPipe → CNN1D + BiLSTM → Kết quả nhận dạng</p>
+      <p class="developer-only">Web: Camera → MediaPipe → CNN1D + BiLSTM → Kết quả nhận dạng</p>
       <p class="user-only hidden">Hỗ trợ chuyển ký hiệu tiếng Việt thành văn bản và giọng nói</p>
     </div>
 
@@ -61,7 +61,7 @@
       </div>
 
       <div class="hint">
-        <strong>Gợi ý demo:</strong> đặt camera ngang tầm ngực, để rõ hai tay, ánh sáng đủ, thực hiện ký hiệu chậm và dứt khoát.
+        <strong>Gợi ý :</strong> đặt camera ngang tầm ngực, để rõ hai tay, ánh sáng đủ, thực hiện ký hiệu chậm và dứt khoát.
       </div>
     </section>
 
@@ -125,17 +125,23 @@
     </section>
   </main>
 
-  <section class="card upload-card developer-only">
-    <div class="card-title">
-      <h2>Nhận dạng từ video mẫu</h2>
-      <span>Dự phòng khi webcam lỗi</span>
-    </div>
-    <div class="upload-row">
-      <input id="videoUpload" type="file" accept="video/*" />
-      <button id="uploadBtn" class="secondary">Upload & nhận dạng</button>
-    </div>
-    <pre id="uploadResult">Chưa upload video.</pre>
-  </section>
+<section class="card upload-card">
+  <div class="card-title">
+    <h2>Nhận dạng từ video mẫu</h2>
+    <span>Dự phòng khi webcam lỗi</span>
+  </div>
+
+<div class="upload-row">
+  <label for="videoUpload" class="secondary file-btn">Chọn video</label>
+  <input type="file" id="videoUpload" accept="video/*" class="file-input">
+  <span id="videoFileName" class="file-name">Chưa chọn video</span>
+
+  <button id="uploadBtn" class="secondary upload-btn">Upload & nhận dạng</button>
+</div>
+
+  <p id="uploadSummary" class="hint"></p>
+  <pre id="uploadResult" class="developer-only"></pre>
+</section>
 
   <script src="js/api.js"></script>
   <script src="js/speech.js"></script>

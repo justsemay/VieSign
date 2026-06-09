@@ -206,7 +206,43 @@ button.danger-light {
   background: var(--danger-soft);
   border-color: #fecdd3;
 }
+/* ===== Upload video buttons ===== */
+.file-input {
+  display: none;
+}
 
+.file-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--primary);
+  border-radius: 13px;
+  padding: 11px 15px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.file-btn:hover {
+  transform: translateY(-1px);
+  background: #f8fafc;
+  box-shadow: 0 10px 22px rgba(15, 42, 77, 0.08);
+}
+
+.file-name {
+  color: var(--text);
+  font-weight: 600;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.upload-btn {
+  margin-left: 12px;
+}
 .hint {
   margin-top: 18px;
   color: var(--muted);
@@ -404,6 +440,7 @@ pre {
   padding: 14px;
   border-radius: 14px;
   overflow: auto;
+  max-height: 260px;
 }
 
 body.user-mode .developer-only { display: none !important; }

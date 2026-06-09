@@ -7,7 +7,6 @@ import numpy as np
 
 
 def decode_base64_image(data_url: str) -> np.ndarray:
-    """Decode ảnh base64 từ frontend thành OpenCV BGR image."""
     if not data_url:
         raise ValueError("Không có dữ liệu ảnh")
 

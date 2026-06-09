@@ -7,6 +7,7 @@ const backspaceBtn = document.getElementById('backspaceBtn');
 const speakBtn = document.getElementById('speakBtn');
 const uploadBtn = document.getElementById('uploadBtn');
 const videoUpload = document.getElementById('videoUpload');
+const videoFileName = document.getElementById("videoFileName");
 const expertModeToggle = document.getElementById('expertModeToggle');
 const autoSpeakToggle = document.getElementById('autoSpeakToggle');
 
@@ -41,7 +42,6 @@ function applyMode(isExpert) {
 
 function initMode() {
   const saved = localStorage.getItem('expertMode');
-  // Mặc định bật Chuyên gia để thuận lợi debug khi làm đồ án.
   const isExpert = saved === null ? true : saved === '1';
   expertModeToggle.checked = isExpert;
   applyMode(isExpert);
@@ -56,7 +56,6 @@ function applyAutoSpeak(enabled) {
 
 function initAutoSpeak() {
   const saved = localStorage.getItem('autoSpeakEnabled');
-  // Mặc định bật để phù hợp mục tiêu hỗ trợ giao tiếp cho người dùng cuối.
   const enabled = saved === null ? true : saved === '1';
   applyAutoSpeak(enabled);
 }
@@ -235,18 +234,42 @@ async function uploadVideo() {
     return;
   }
 
-  uploadResult.textContent = 'Đang xử lý video...';
+  const oldText = uploadBtn.textContent;
+  uploadBtn.disabled = true;
+  uploadBtn.textContent = 'Đang xử lý...';
+  uploadResult.textContent = '';
+
   try {
     const result = await API.predictVideo(file);
-    uploadResult.textContent = JSON.stringify(result, null, 2);
+
     if (result.sentence_text) {
       renderSentence(result.sentence_text, result.sentence_display || []);
+    } else {
+      renderSentence('', []);
+    }
+
+    if (expertModeToggle.checked) {
+      uploadResult.textContent = JSON.stringify(result, null, 2);
     }
   } catch (e) {
-    uploadResult.textContent = 'Lỗi upload video: ' + e.message;
+    if (expertModeToggle.checked) {
+      uploadResult.textContent = 'Lỗi upload video: ' + e.message;
+    } else {
+      alert('Không xử lý được video. Hãy thử lại.');
+    }
+  } finally {
+    uploadBtn.disabled = false;
+    uploadBtn.textContent = oldText;
   }
 }
 
+
+
+if (videoUpload && videoFileName) {
+  videoUpload.addEventListener("change", () => {
+    videoFileName.textContent = videoUpload.files[0]?.name || "Chưa chọn video";
+  });
+}
 startBtn.addEventListener('click', startCamera);
 stopBtn.addEventListener('click', stopCamera);
 clearBtn.addEventListener('click', clearSentence);

@@ -6,7 +6,6 @@ import numpy as np
 
 
 class MediaPipeService:
-    """Xử lý MediaPipe Holistic và trích xuất vector 225 đặc trưng."""
 
     def __init__(self, min_detection_confidence: float = 0.7, min_tracking_confidence: float = 0.7):
         self.mp_holistic = mp.solutions.holistic

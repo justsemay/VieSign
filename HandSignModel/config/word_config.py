@@ -14,20 +14,32 @@ SEQUENCE_LENGTH = 30   # Số frame/video
 
 # Danh sách từ — thêm/bớt tại đây
 ACTIONS = [
-    # Giao tiếp
+# Giao tiếp
     "xin_chao", "xin_loi", "cam_on",
 
     # Xưng hô
-    "toi", "ban", "thay", "co",
+    "toi", "ban", "thay", "co", "bo", "me", "hang_xom",
 
     # Động từ / hành động
     "muon", "hoc", "giup_do", "an", "uong", "trinh_bay", "lam_viec",
+    "tra_loi", "viet", "di", "xem", "doc_sach", "nghi_ngoi",
 
-    # Trạng thái
-    "vui", "buon", "khoe", "met",
+    # Trạng thái / cảm xúc / nhu cầu
+    "vui", "buon", "khoe", "met", "khoc", "doi", "khat",
+    "nong", "lanh", "gian_du", "nguy_hiem",
 
-    # Danh từ
-    "du_an",
+    # Danh từ / địa điểm / vật dụng
+    "du_an", "da_bong", "nha_ve_sinh", "lop", "truong",
+    "dien_thoai", "tien", "phim",
+
+    # Phương tiện
+    "o_to", "xe_dap", "xe_may",
+
+    # Thời gian
+    "buoi_sang", "buoi_trua", "buoi_toi",
+
+    # Nhận thức
+    "hieu",
 
     # Không ký hiệu
     "IDLE"
